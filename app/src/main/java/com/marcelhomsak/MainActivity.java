@@ -1,16 +1,24 @@
 package com.marcelhomsak;
 
+import android.media.MediaPlayer;
+        import android.net.Uri;
         import android.os.CountDownTimer;
         import android.os.Bundle;
+        import android.provider.MediaStore;
+        import android.text.Html;
         import android.view.View;
         import android.widget.Button;
         import android.widget.TextView;
+        import android.widget.VideoView;
 
         import androidx.appcompat.app.AppCompatActivity;
 
         import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+    private VideoView mVideoView;
+
     private static final long START_TIME_IN_MILLIS = 600000;
 
     private TextView mTextViewCountDown;
@@ -25,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().hide();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -32,6 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
+
+        mVideoView = (VideoView) findViewById(R.id.bgVideoView);
+        String uriPath = "android.resource://"+getPackageName()+"/"+R.raw.universe5;
+        Uri uri = Uri.parse(uriPath);
+        mVideoView.setVideoURI(uri);
+        mVideoView.start();
+
+        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
