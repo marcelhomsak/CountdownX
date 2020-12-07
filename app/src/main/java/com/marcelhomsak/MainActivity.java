@@ -1,14 +1,15 @@
 package com.marcelhomsak;
 
+import android.media.Image;
 import android.media.MediaPlayer;
         import android.net.Uri;
         import android.os.CountDownTimer;
         import android.os.Bundle;
-        import android.provider.MediaStore;
-        import android.text.Html;
-        import android.view.View;
+import android.view.View;
         import android.widget.Button;
-        import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
         import android.widget.VideoView;
 
         import androidx.appcompat.app.AppCompatActivity;
@@ -77,6 +78,30 @@ public class MainActivity extends AppCompatActivity {
         });
 
         updateCountdownText();
+
+
+        MediaPlayer crewSound = MediaPlayer.create(this, R.raw.crewmusic);
+        ImageButton playMusic = (ImageButton) this.findViewById(R.id.playMusic);
+
+        playMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(crewSound.isPlaying()) {
+                    crewSound.pause();
+                    playMusic.setBackgroundResource(R.drawable.notecrossedout);
+                }
+                else {
+                    crewSound.start();
+                    playMusic.setBackgroundResource(R.drawable.note);
+                }
+        }
+
+
+        });
+
+
+
+
     }
 
     private void startTimer() {
@@ -119,6 +144,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
     private void updateCountdownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
