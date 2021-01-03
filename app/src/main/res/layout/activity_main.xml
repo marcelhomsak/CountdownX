@@ -75,8 +75,23 @@
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092"
+        app:layout_constraintVertical_bias="0.134"
         app:srcCompat="@drawable/note" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="38dp"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:onClick="openActivity2"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055"
+        app:srcCompat="@drawable/info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

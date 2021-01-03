@@ -1,5 +1,6 @@
 package com.marcelhomsak;
 
+import android.content.Intent;
 import android.media.Image;
 import android.media.MediaPlayer;
         import android.net.Uri;
@@ -17,7 +18,6 @@ import android.widget.TextView;
         import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
     private VideoView mVideoView;
 
     private static final long START_TIME_IN_MILLIS = 600000;
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         getSupportActionBar().hide();
 
         super.onCreate(savedInstanceState);
@@ -145,9 +144,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
     private void updateCountdownText() {
         int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
@@ -155,5 +151,10 @@ public class MainActivity extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "T - 00:%02d:%02d", minutes, seconds);
 
         mTextViewCountDown.setText(timeLeftFormatted);
+    }
+
+    public void openActivity2(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
     }
 }
