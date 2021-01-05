@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -20,17 +19,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
     private EditText mEditTextInput;
     private TextView mTextViewCountDown;
     private Button mButtonSet;
     private Button mButtonStartPause;
     private Button mButtonReset;
     private VideoView mVideoView;
-
     private CountDownTimer mCountDownTimer;
-
     private boolean mTimerRunning;
-
     private long mStartTimeInMillis;
     private long mTimeLeftInMillis;
     private long mEndTime;
@@ -45,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         mEditTextInput = findViewById(R.id.edit_text_input);
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
-
         mButtonSet = findViewById(R.id.button_set);
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
@@ -57,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mVideoView.setVideoURI(uri);
         mVideoView.start();
 
+        // Ponavljanje posnetka (loop)
         mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -66,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Predvajanje glasbe (.mp3)
         MediaPlayer crewSound = MediaPlayer.create(this, R.raw.crewmusic);
-        ImageButton playMusic = this.findViewById(R.id.playMusic);
+        Button playMusic = this.findViewById(R.id.playMusic);
 
         playMusic.setOnClickListener(new View.OnClickListener() {
             @Override
