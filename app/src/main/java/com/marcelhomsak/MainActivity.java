@@ -46,21 +46,6 @@ public class MainActivity extends AppCompatActivity {
         mButtonStartPause = findViewById(R.id.button_start_pause);
         mButtonReset = findViewById(R.id.button_reset);
 
-        // Predvajanje posnetka Vesolja (.mp4) v ozadju
-        mVideoView = (VideoView) findViewById(R.id.bgVideoView);
-        String uriPath = "android.resource://"+getPackageName()+"/"+R.raw.universe5;
-        Uri uri = Uri.parse(uriPath);
-        mVideoView.setVideoURI(uri);
-        mVideoView.start();
-
-        // Ponavljanje posnetka (loop)
-        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-            }
-        });
-
         // Predvajanje glasbe (.mp3)
         MediaPlayer crewSound = MediaPlayer.create(this, R.raw.crewmusic);
         Button playMusic = this.findViewById(R.id.playMusic);
@@ -118,6 +103,27 @@ public class MainActivity extends AppCompatActivity {
                 resetTimer();
             }
         });
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        // Predvajanje posnetka Vesolja (.mp4) v ozadju
+        mVideoView = (VideoView) findViewById(R.id.bgVideoView);
+        String uriPath = "android.resource://"+getPackageName()+"/"+R.raw.universe5;
+        Uri uri = Uri.parse(uriPath);
+        mVideoView.setVideoURI(uri);
+        mVideoView.start();
+
+        // Ponavljanje posnetka (loop)
+        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+            }
+        });
+
     }
 
     private void setTime(long milliseconds) {
