@@ -20,6 +20,8 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        getSupportActionBar().setTitle("CountdownX Settings");
+
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
@@ -33,7 +35,7 @@ public class MainActivity2 extends AppCompatActivity {
         textViewTime.setText("Time: ");
 
         textClock = findViewById(R.id.textClock);
-        textClock.setFormat24Hour("hh:mm:ss");
+        textClock.setFormat12Hour("HH:mm:ss");
 
     }
 }

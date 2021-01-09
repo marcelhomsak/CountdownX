@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
+// TODO: 09/01/2021 - make custom wallpaper, custom music. Change GUI on the second activity. Select time in the future and countdown will automatically calculate the difference between current time and time in the future.
     private EditText mEditTextInputHours;
     private EditText mEditTextInputMinutes;
     private EditText mEditTextInputSeconds;
