@@ -3,6 +3,7 @@ package com.marcelhomsak;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -12,6 +13,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private TextView textViewDate;
     private TextView textViewTime;
+    private TextClock textClock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,10 @@ public class MainActivity2 extends AppCompatActivity {
         textViewDate.setText("Date: "+currentDate);
 
         textViewTime = findViewById(R.id.textViewTime);
-        textViewTime.setText("Time: "+calendar.getTime());
+        textViewTime.setText("Time: ");
+
+        textClock = findViewById(R.id.textClock);
+        textClock.setFormat12Hour("hh:mm:ss");
 
     }
 }
