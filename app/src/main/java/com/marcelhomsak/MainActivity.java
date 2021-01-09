@@ -20,6 +20,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText mEditTextInputHours;
     private EditText mEditTextInputMinutes;
     private EditText mEditTextInputSeconds;
     private TextView mTextViewCountDown;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         // Skrije naslovno vrstico
         getSupportActionBar().hide();
 
+        mEditTextInputHours = findViewById(R.id.edit_text_input_hours);
         mEditTextInputMinutes = findViewById(R.id.edit_text_input_minutes);
         mEditTextInputSeconds = findViewById(R.id.edit_text_input_seconds);
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String inputHours = mEditTextInputHours.getText().toString();
                 String inputMinutes = mEditTextInputMinutes.getText().toString();
                 String inputSeconds = mEditTextInputSeconds.getText().toString();
                 if (inputMinutes.length() * inputSeconds.length() == 0) {
@@ -81,8 +84,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                else if (inputHours.length() == 0) {
+                    Toast.makeText(MainActivity.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                long millisInput = Long.parseLong(inputMinutes) * 60000 + Long.parseLong(inputSeconds) * 1000;
+                long millisInput = Long.parseLong(inputMinutes) * 60000 + Long.parseLong(inputSeconds) * 1000 + Long.parseLong(inputHours) * 3600000;
 
                 if (millisInput == 0) {
                     Toast.makeText(MainActivity.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
@@ -90,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 setTime(millisInput);
+                mEditTextInputHours.setText("");
                 mEditTextInputMinutes.setText("");
                 mEditTextInputSeconds.setText("");
             }
@@ -188,12 +196,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateWatchInterface() {
         if (mTimerRunning) {
+            mEditTextInputHours.setVisibility(View.INVISIBLE);
             mEditTextInputMinutes.setVisibility(View.INVISIBLE);
             mEditTextInputSeconds.setVisibility(View.INVISIBLE);
             mButtonSet.setVisibility(View.INVISIBLE);
             mButtonReset.setVisibility(View.INVISIBLE);
             mButtonStartPause.setText("Pause");
         } else {
+            mEditTextInputHours.setVisibility(View.VISIBLE);
             mEditTextInputMinutes.setVisibility(View.VISIBLE);
             mEditTextInputSeconds.setVisibility(View.VISIBLE);
             mButtonSet.setVisibility(View.VISIBLE);

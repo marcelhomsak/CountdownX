@@ -107,9 +107,25 @@
         app:layout_constraintVertical_bias="0.862" />
 
     <EditText
+        android:id="@+id/edit_text_input_hours"
+        android:layout_width="106dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Hours"
+        android:inputType="number"
+        app:backgroundTint="#005288"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
+
+    <EditText
         android:id="@+id/edit_text_input_minutes"
-        android:layout_width="104dp"
-        android:layout_height="53dp"
+        android:layout_width="106dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Minutes"
@@ -117,7 +133,7 @@
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
@@ -133,7 +149,7 @@
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
