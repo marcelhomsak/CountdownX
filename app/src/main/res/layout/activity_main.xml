@@ -76,7 +76,7 @@
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.164" />
 
     <ImageButton
         android:id="@+id/infoButton"
@@ -90,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"
+        app:layout_constraintVertical_bias="0.083"
         app:srcCompat="@drawable/info" />
 
     <Button
@@ -107,20 +107,36 @@
         app:layout_constraintVertical_bias="0.862" />
 
     <EditText
-        android:id="@+id/edit_text_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_input_minutes"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
         android:ems="10"
-        android:inputType="number"
-        android:hint="Minutes"
         android:gravity="center"
+        android:hint="Minutes"
+        android:inputType="number"
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.771" />
+
+    <EditText
+        android:id="@+id/edit_text_input_seconds"
+        android:layout_width="106dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Seconds"
+        android:inputType="number"
+        app:backgroundTint="#005288"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

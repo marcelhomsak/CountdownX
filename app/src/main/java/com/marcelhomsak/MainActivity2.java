@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
         textViewTime.setText("Time: ");
 
         textClock = findViewById(R.id.textClock);
-        textClock.setFormat12Hour("hh:mm:ss");
+        textClock.setFormat24Hour("hh:mm:ss");
 
     }
 }
