@@ -5,7 +5,8 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.marcelhomsak.MainActivity">
+    tools:context="com.marcelhomsak.MainActivity"
+    android:background="@color/black">
 
     <VideoView
         android:id="@+id/bgVideoView"
