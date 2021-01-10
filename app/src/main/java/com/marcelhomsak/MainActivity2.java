@@ -25,9 +25,6 @@ public class MainActivity2 extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
-
-
-
         textViewDate = findViewById(R.id.textViewDate);
         textViewDate.setText("Date: "+currentDate);
 
@@ -35,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         textViewTime.setText("Time: ");
 
         textClock = findViewById(R.id.textClock);
-        textClock.setFormat12Hour("HH:mm:ss");
+        textClock.setFormat24Hour("HH:mm:ss");
 
     }
 }

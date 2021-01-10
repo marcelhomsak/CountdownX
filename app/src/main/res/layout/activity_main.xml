@@ -109,24 +109,24 @@
 
     <EditText
         android:id="@+id/edit_text_input_hours"
-        android:layout_width="106dp"
-        android:layout_height="52dp"
+        android:layout_width="78dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Hours"
         android:inputType="number"
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintEnd_toStartOf="@+id/edit_text_input_minutes"
+        app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <EditText
         android:id="@+id/edit_text_input_minutes"
-        android:layout_width="106dp"
-        android:layout_height="52dp"
+        android:layout_width="78dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Minutes"
@@ -134,15 +134,15 @@
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
 
     <EditText
         android:id="@+id/edit_text_input_seconds"
-        android:layout_width="106dp"
-        android:layout_height="52dp"
+        android:layout_width="78dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Seconds"
@@ -150,10 +150,10 @@
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_input_minutes"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.77" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
