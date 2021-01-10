@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="start"
+        android:textColor="@color/white"
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="@+id/bgVideoView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="reset"
+        android:textColor="@color/white"
         android:visibility="invisible"
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,8 +78,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintTop_toBottomOf="@+id/infoButton"
+        app:layout_constraintVertical_bias="0.016" />
 
     <ImageButton
         android:id="@+id/infoButton"
@@ -99,23 +101,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set"
+        android:textColor="@color/white"
         app:backgroundTint="#005288"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_input_minutes"
+        app:layout_constraintVertical_bias="0.296" />
 
     <EditText
         android:id="@+id/edit_text_input_hours"
-        android:layout_width="78dp"
+        android:layout_width="90dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Hours"
+        android:textColorHint="#808080"
         android:inputType="number"
-        app:backgroundTint="#005288"
+        android:backgroundTint="#005288"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edit_text_input_minutes"
         app:layout_constraintHorizontal_bias="0.84"
@@ -125,29 +130,33 @@
 
     <EditText
         android:id="@+id/edit_text_input_minutes"
-        android:layout_width="78dp"
+        android:layout_width="90dp"
         android:layout_height="50dp"
+        android:backgroundTint="#005288"
         android:ems="10"
         android:gravity="center"
         android:hint="Minutes"
         android:inputType="number"
-        app:backgroundTint="#005288"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#808080"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <EditText
         android:id="@+id/edit_text_input_seconds"
-        android:layout_width="78dp"
+        android:layout_width="90dp"
         android:layout_height="50dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Seconds"
+        android:textColorHint="#808080"
         android:inputType="number"
-        app:backgroundTint="#005288"
+        android:backgroundTint="#005288"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.168"
